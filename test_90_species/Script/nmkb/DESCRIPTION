@@ -1,13 +1,13 @@
 Package: nmkb
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Nelder-Mead optimization algorithm for derivative-free...
+Version: 1.0
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "ZIQI",
+           family = "ZHU",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "zzhu49@asu.edu",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: It performs the same function as the existing R package except that the stopping criterion changes from the difference in function value to the difference in rmse (root-mean square error) of the parameter sets between succesive iteration. Default is 1.e-04. 
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8

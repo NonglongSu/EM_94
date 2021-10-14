@@ -12,17 +12,23 @@ suppressPackageStartupMessages(library(jsonlite))
 
 # library(devtools)
 # library(roxygen2)
-# setwd("~/Dropbox (ASU)/Indel_project/Script/90")
+# setwd("~/Dropbox (ASU)/ZIQI_github/EMziqi/test_90_species")
 # getwd()
 # devtools::create("nmkb")
 
 #document
-#devtools::document(pkg="./nmkb")
+#devtools::document(pkg="./nmkbZ")
+#install package
+#devtools::install(pkg="test_90_species/Script/nmkb")
+#library(nmkb)
+#getwd()
 #load_package
-devtools::load_all(path="../Script/nmkb")
+devtools::load_all(path="Script/nmkb")
+
+
 
 #sources all functions needed.
-sub = "../Script/sources/"
+sub = "Script/sources/"
 source(paste0(sub,"codon_call.R"))
 source(paste0(sub,"gtr.R"))
 source(paste0(sub,"mg94.R"))
