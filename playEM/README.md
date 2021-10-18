@@ -1,5 +1,5 @@
 ## Synopsis
-EM-MG94 is demonstration workflow for using the Expectation-Maximization algorithm to train the hidden substituion models **(GTR, EM94)**
+EM-MG94 is demonstration workflow for using the Expectation-Maximization algorithm to train the hidden substituion models **(GTR, MG94)**
 to find the to find maximum-likelihood estimates for model parameters.  
 
 ## Dependencies
@@ -7,7 +7,7 @@ to find the to find maximum-likelihood estimates for model parameters.
 * [GNU Make] (https://www.gnu.org/software/make/)
 
 ## Download
-git clone https://github.com/NonglongSu/EM-mg94.git 
+git clone -b EMfun --single-branch https://github.com/NonglongSu/EM-mg94.git  
 cd EM-mg94
 
 
@@ -22,25 +22,26 @@ By default, if you don't type options, we already prepare the input and save the
 Simulation:  
   make par      [output]                                 generate a random parameter set as the true value.  
   make sim_mg94 [input] [output] [codon length] [num]    obtain all 12 parameter ests using EM.    
-    --input/output: a text file of one line seperated by tab (Ex.Results/rand_para.txt).    
+    --input/output: a text file of one line seperated by tab.  
     --codon length: the length of the codon alignment, if the codon length is 1000, then the seq length is 3000.  
-    --num:          the number of codons, 64 means including stop codons, 61 means removing stop codons.  
+    --num:          the number of codons, 61 excludes stop codons.  
                        
 Real data:  
-make data-mg94  [input] [output] [num]    obtain all 12 parameter ests using EM.  
+make data-mg94  [input] [output] [num]                   obtain all 12 parameter ests using EM.  
   --input:  a fasta file of pairwise alignment (the alignment legnth must be multiple of three)  
-  --output: a text file of one line seperated by tab (Ex.Results/data94_est.txt)  
+  --output: a text file of one line seperated by tab.
   --num:    the number of codons, 64/61.  
 
 NMKB optimization method  
-make sim_nmkb [input] [output] [codon length] [num]    obtain all 12 parameter ests using nmkb.   
-make data-nmkb [input] [output] [num]                  obtain all 12 parameter ests using nmkb.
+make sim_nmkb [input] [output] [codon length] [num]      obtain all 12 parameter ests using nmkb.   
+make data-nmkb [input] [output] [num]                    obtain all 12 parameter ests using nmkb.
  
-make help                                              print this help message with all commands and exit  
+make help                                                print this help message with all commands and exit  
 ```
 
 
 ## Sample runs
+```
 make par    
 make sim_mg94  
 make data_mg94  
@@ -52,5 +53,5 @@ make sim_mg94  inF1="yourownpara.txt" ouF1="Results/est1.txt" len="1e+4" num="61
 make data_mg94 inF2="yourownfasta.fa" ouF2="Results/est2.txt" num="61"   
 make sim_nmkb  inF1="yourownpara.txt" ouF3="Results/est3.txt" len="1e+4" num="61"  
 make data_nmkb inF2="yourownpara.txt" ouF4="Results/est4.txt" num="61"  
-
+```
 
