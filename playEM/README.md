@@ -8,7 +8,7 @@ to find the to find maximum-likelihood estimates for model parameters.
 
 ## Download
 git clone -b EMfun --single-branch https://github.com/NonglongSu/EM-mg94.git  
-cd EM-mg94
+cd playEM
 
 
 ## Usage
