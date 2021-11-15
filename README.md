@@ -12,7 +12,7 @@ cd test_90_species
 
 ## Usage  
 EM-training of 100 simulations.  
-EM-training of 90 real species pairs.  
+EM-training of 90 real species pairs..  
 
 ```
 Usage: make help    show you all commands that you can repeat this research from scratch.
