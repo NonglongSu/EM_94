@@ -13,8 +13,6 @@ all:
 
 
 #######################################
-
-#setup parameter space(true value)
 override ouF  ?= "Results/rand_para.txt"
 
 override inF1 ?= "Results/rand_para.txt"
@@ -57,8 +55,8 @@ clean:
 
 
 help:
-	@echo "make par:	create a single random parameter set".
+	@echo "make par:	create a single random parameter set(4 nuc freqs, 6 sigmas, omega, tau)".
 	@echo "make sim_mg94	obtain all 12 parameter ests of simulated data using EM"
-	@echo "make sim_mg94	obtain all 12 parameter ests of real data using EM"
-	@echo "make sim_nmkb	obtain all 12 parameter ests of real data using nmkb"
+	@echo "make data_mg94	obtain all 12 parameter ests of real data using EM"
+	@echo "make sim_nmkb	obtain all 12 parameter ests of simulated data using nmkb"
 	@echo "make data_nmkb	obtain all 12 parameter ests of real data using nmkb"
