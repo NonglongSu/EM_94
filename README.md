@@ -1,5 +1,5 @@
 ## Synopsis
-test_90_species is one chapter of my thesis for using the Expectation-Maximization algorithm to train the hidden substituion models **(GTR, EM94)**
+test_90_species is one of the chapters of my thesis for using the Expectation-Maximization algorithm to train the hidden substituion models **(GTR, EM94)**
 to find the to find maximum-likelihood estimates for model parameters.  
 
 ## Dependencies
@@ -11,10 +11,10 @@ git clone https://github.com/NonglongSu/EMziqi
 cd test_90_species          
 
 ## Usage  
-EM-training of 100 simulations.  
-EM-training of 90 real species pairs.  
+* EM-training of 100 simulated coding sequences.   
+* EM-training of 90 real species pairs.  
 
 ```
-Usage: make help    show you all commands that you can repeat this research from scratch.
+Usage: make help    show you all commands that you need
 
 ```
