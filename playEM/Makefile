@@ -8,23 +8,23 @@ RM      = rm -i
 default: all
 all:
 .PHONY: default all clean help
-.PHONY: par sim_mg94 data_mg94 sim_nmkb data_nmkb
+.PHONY: par sim_mg94 data_mg94 sim_nmkb data_nmkb qqplot
 
 
 
 #######################################
 override ouF  ?= "Results/rand_para.txt"
 
-override inF1 ?= "Results/rand_para.txt"
-override ouF1 ?= "Results/sim94_est.txt"
 override len  ?= "1e+5"
 override num  ?= "64"
+override inF1 ?= "sample/para.txt"
+override ouF1 ?= "Results/em_sim_est.txt"
 
-override inF2 ?= "fasta/example.fa"
-override ouF2 ?= "Results/data94_est.txt"
+override inF2 ?= "sample/example.fa"
+override ouF2 ?= "Results/em_real_est.txt"
 
-override ouF3 ?= "Results/sim_nmkb_est.txt"
-override ouF4 ?= "Results/data_nmkb_est.txt"
+override ouF3 ?= "Results/nmkb_sim_est.txt"
+override ouF4 ?= "Results/nmkb_real_est.txt"
 
 
 #Genreate random true parameters
@@ -46,6 +46,11 @@ sim_nmkb:Script/sim_nmkb.R
 data_nmkb:Script/data_nmkb.R
 	$(RSCRIPT) $< $(inF2) $(ouF4) $(num)
 
+#make a linear plot(compare estimates vs true)
+qqplot:Script/qqplot.R
+	$(RSCRIPT) $< $(inF1) $(ouF3) Results/qqplot.pdf
+
+
 clean:
 	@rm -i Results/*
 
@@ -60,3 +65,6 @@ help:
 	@echo "make data_mg94	obtain all 12 parameter ests of real data using EM"
 	@echo "make sim_nmkb	obtain all 12 parameter ests of simulated data using nmkb"
 	@echo "make data_nmkb	obtain all 12 parameter ests of real data using nmkb"
+	@echo "make qqplot  	compare the estimates vs true values"
+
+
